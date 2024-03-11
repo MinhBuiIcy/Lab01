@@ -1,0 +1,15 @@
+1. If the users choose "Cancel", the value of choice will be null, which will return a No as the if else code:
+(option==JOptionPane.YES_OPTION?"Yes":"No") only return Yes when option == yes, otherwise no
+2. We can customize using JOptionPane.option method:
+String[] options = {"Gold", "Platinum", "Business"};
+
+        // Show the dialog with custom options
+        int choice = JOptionPane.showOptionDialog(
+                null,
+                "Please select your membership type:",
+                "Membership Type",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
