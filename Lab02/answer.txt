@@ -1,0 +1,2 @@
+Java allows we to create multiple constructor methods within a class, each with a different set of parameters. This is known as constructor overloading.
+Constructor is different to each others by name and number of parameters
