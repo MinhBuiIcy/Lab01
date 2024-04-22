@@ -46,8 +46,8 @@ public class Cart {
         System.out.println("********************************************");
     }
 
-    public ArrayList<DigitalVideoDisc> searchDVDByTitle(String title) {
-        ArrayList<DigitalVideoDisc> temp = new ArrayList<DigitalVideoDisc>();
+    public ArrayList<Media> searchMediaByTitle(String title) {
+        ArrayList<Media> temp = new ArrayList<Media>();
 
         for (int i = 0; i < itemsOrdered.size(); i++) {
             if (itemsOrdered.get(i).getTitle() == title) {

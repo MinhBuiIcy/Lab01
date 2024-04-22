@@ -16,6 +16,6 @@ public class CartTest {
         
         cart.print();
 
-        cart.searchDVDByTitle("Aladin");
+        cart.searchMediaByTitle("Aladin");
     }
 }
