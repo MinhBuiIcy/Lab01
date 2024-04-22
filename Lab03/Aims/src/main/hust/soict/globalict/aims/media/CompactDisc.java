@@ -2,7 +2,7 @@ package hust.soict.globalict.aims.media;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Disc{
+public class CompactDisc extends Disc implements Playable{
     private String artist;
     ArrayList<Track> tracks = new ArrayList<Track>();
 
@@ -28,6 +28,10 @@ public class CompactDisc extends Disc{
     }
 
     public void removeTrack(Track track) {
+        if (tracks.isEmpty()) {
+            System.out.println("There\'s none!!!");
+            return;
+        }
         if (tracks.remove(track)) {
             System.out.println("The track have been removed!!!");
             return;
@@ -42,5 +46,10 @@ public class CompactDisc extends Disc{
             temp += tracks.get(i).getLength();
         }
         return temp;
+    }
+    public void play() {
+        for (int i = 0; i < tracks.size(); i++) {
+            tracks.get(i).play();
+        }
     }
 }
