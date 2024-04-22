@@ -2,43 +2,37 @@ package hust.soict.globalict.aims.cart;
 
 import java.util.ArrayList;
 import hust.soict.globalict.aims.media.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.Media;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
-	private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
-	private int qtyOrdered = 0;
-	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
-		if (qtyOrdered >= MAX_NUMBERS_ORDERED){
+	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	public void addMedia(Media media) {
+		if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED){
 			System.out.println("The cart has been full, take out another item to place");
 		}
 		else {
-			System.out.println("The disc has been added");
-			itemsOrdered[qtyOrdered] = disc;
-			qtyOrdered += 1;
+			System.out.println("The item has been added");
+            itemsOrdered.add(media);
 		}
 	}
-	public void remoreDigitalVideoDisc(DigitalVideoDisc disc) {
-		if (qtyOrdered == 0) {
+	public void removeMedia(Media media) {
+		if (itemsOrdered.isEmpty()) {
 			System.out.println("The cart is empty");
 			return;
 		}
-		for(int i = 0; i < qtyOrdered; i++) {
-			if (this.itemsOrdered[i].equals(disc)) {
-				for (int j = i + 1; j < qtyOrdered; j ++) {
-					itemsOrdered[j-1] = itemsOrdered[j];
-				}
-				qtyOrdered -= 1;
-				System.out.println("The disc has been removed");
-				return;
-			}
-		}
-		System.out.println("There\'s no such disc");
+		if (itemsOrdered.remove(media)) {
+            System.out.println("The item have been removed!!!");
+            return;
+        }
+        System.out.println("There is no such item!!!");
+        return;
 	}
 
     public float totalCost() {
         float total = 0;
-        for (int i = 0; i < qtyOrdered; i++) {
-            total += itemsOrdered[i].getCost();
+        for (int i = 0; i < itemsOrdered.size(); i++) {
+            total += itemsOrdered.get(i).getCost();
         }
         return total;
     }
@@ -46,8 +40,8 @@ public class Cart {
     public void print() {
         System.out.println("********************CART********************");
         System.out.println("Ordered Items:");
-        for (int i = 0; i < qtyOrdered; i++) {
-            System.out.println(String.valueOf(i + 1) + ". DVD - " + itemsOrdered[i].toString());
+        for (int i = 0; i < itemsOrdered.size(); i++) {
+            System.out.println(String.valueOf(i + 1) + ". Media - " + itemsOrdered.get(i).toString());
         }
         System.out.println("********************************************");
     }
@@ -55,11 +49,11 @@ public class Cart {
     public ArrayList<DigitalVideoDisc> searchDVDByTitle(String title) {
         ArrayList<DigitalVideoDisc> temp = new ArrayList<DigitalVideoDisc>();
 
-        for (int i = 0; i < qtyOrdered; i++) {
-            if (itemsOrdered[i].getTitle() == title) {
+        for (int i = 0; i < itemsOrdered.size(); i++) {
+            if (itemsOrdered.get(i).getTitle() == title) {
                 System.out.println("Disc with given title found at index " + String.valueOf(i) + ".");
-                temp.add(new DigitalVideoDisc(itemsOrdered[i].getTitle(), itemsOrdered[i].getCategory(),
-                        itemsOrdered[i].getDirector(), itemsOrdered[i].getLength(), itemsOrdered[i].getCost()));
+                temp.add(new DigitalVideoDisc(itemsOrdered.get(i).getTitle(), itemsOrdered.get(i).getCategory(),
+                        itemsOrdered.get(i).getCost()));
             }
         }
         

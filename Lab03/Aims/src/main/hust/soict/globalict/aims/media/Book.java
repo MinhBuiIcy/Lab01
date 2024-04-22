@@ -22,6 +22,10 @@ public class Book extends Media{
     }
 
     public void removeAuthor(String authorName) {
+        if (authors.isEmpty()) {
+            System.out.println("There\'s none!!!");
+            return;
+        }
         if (authors.remove(authorName)) {
             System.out.println("The author have been removed!!!");
             return;
