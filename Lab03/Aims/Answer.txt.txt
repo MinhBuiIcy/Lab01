@@ -1,0 +1,14 @@
+- Class Media will implement the Comparable interface
+- In class Media, I will overide compareTo() method, of which return positive if the instance call the method has lexicographically higher postition, negative if the instance call the method has lexicographically lower postition, 0 if otherwise.
+- No, the compareTo() method in the Comparable interface can only define a single natural ordering for the objects.
+- I will let my DigitalVideoDisc implement Comparable interface, overide compareTo() method:
+If the title of the instance called has lexicographically higher postition, return 1
+If the title of the instance called has lexicographically lower postition, return -1
+If otherwise:
+	If the length of the instance called has lexicographically higher postition, return 1
+	If the length of the instance called has lexicographically lower postition, return -1
+	If otherwise:
+		If the cost of the instance called has lexicographically higher postition, return 1
+		If the cost of the instance called has lexicographically lower postition, return -1
+
+
