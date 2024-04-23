@@ -17,5 +17,7 @@ public class CartTest {
         cart.print();
 
         cart.searchMediaByTitle("Aladin");
+        cart.displaySortByCostTitle();
+        cart.displaySortByTitleCost();
     }
 }

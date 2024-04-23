@@ -9,6 +9,10 @@ public class Book extends Media{
     public Book(String title, String category, float cost) {
         super(title, category, cost);
     }
+    public Book(String title, String category, float cost, ArrayList<String> authors) {
+        super(title, category, cost);
+        this.authors = authors;
+    }
 
     public void addAuthor(String authorName) {
         for (int i = 0; i < authors.size(); i++) {
