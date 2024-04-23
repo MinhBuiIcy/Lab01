@@ -49,7 +49,10 @@ public class Cart {
         }
         return total;
     }
-
+    
+    public void placeOrder() {
+        itemsOrdered.clear();
+    }
     public void print() {
         System.out.println("********************CART********************");
         System.out.println("Ordered Items:");

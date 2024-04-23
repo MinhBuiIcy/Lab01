@@ -366,6 +366,7 @@ public class Aims {
     public static void placeOrder() {
         System.out.println("Your order have been confirmed!!!");
         cart.print();
+        cart.placeOrder();
     }
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
