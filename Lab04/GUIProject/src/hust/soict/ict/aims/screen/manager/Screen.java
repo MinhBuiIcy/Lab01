@@ -22,10 +22,10 @@ import javax.swing.JPanel;
 
 import hust.soict.ict.aims.store.Store;
 
-public abstract class AddScreen extends JFrame implements ActionListener{
+public abstract class Screen extends JFrame implements ActionListener{
     protected Store store;
 
-    public AddScreen(Store store){
+    public Screen(Store store){
         this.store = store;
 
         Container cp = getContentPane();

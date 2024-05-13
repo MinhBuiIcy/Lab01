@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 import hust.soict.ict.aims.media.DigitalVideoDisc;
 import hust.soict.ict.aims.store.Store;
 
-public class AddDVDScreen extends AddScreen implements ActionListener{
+public class AddDVDScreen extends Screen implements ActionListener{
     private JTextField titleInput;
     private JTextField categoryInput;
     private JTextField directorInput;

@@ -19,7 +19,7 @@ import hust.soict.ict.aims.media.CompactDisc;
 import hust.soict.ict.aims.media.Track;
 import hust.soict.ict.aims.store.Store;
 
-public class AddCDScreen extends AddScreen implements ActionListener{
+public class AddCDScreen extends Screen implements ActionListener{
     private JTextField titleInput;
     private JTextField categoryInput;
     private JTextField directorInput;
